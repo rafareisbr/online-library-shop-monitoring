@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+
+  django:
+    build: ./shop
+    ports:
+      - "8000:8000"
+    depends_on:
+      - 'postgres'
+    networks:
+      - 'library-shop'
+
+  postgres:
+    image: 'postgres:15.3'
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=pass
+      - POSTGRES_DB=library
+    ports:
+      - "5432:5432"
+    networks:
+      - 'library-shop'
+
+networks:
+  library-shop:
+    name: library-shop
