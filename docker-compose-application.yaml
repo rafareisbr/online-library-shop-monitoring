@@ -4,6 +4,7 @@ services:
 
   db:
     image: 'postgres:13'
+    restart: always
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: pass
@@ -11,6 +12,8 @@ services:
       PGDATA: /var/lib/postgresql/data
     volumes:
       - postgres_db:/var/lib/postgresql/data
+      - ./postgres/custom-config.conf:/var/lib/postgresql/data/postgresql.conf # SHOW config_file;
+      - ./postgres/custom_pg_hba.conf:/var/lib/postgresql/data/pg_hba.conf # SHOW hba_file; SHOW ALL;
     networks:
       - shop-network
     ports:
