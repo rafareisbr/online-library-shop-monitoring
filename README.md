@@ -48,6 +48,7 @@ the data produced by the backend. Then the data is collected by pinot and enrich
       }
     ```
     - Send this payload to POST http://localhost:8083/connectors everything should work well
+    - The link where you find all the possible configurations (https://debezium.io/documentation/reference/2.3/connectors/postgresql.html#postgresql-property-plugin-name)
 
 ## Overview
 APP >> KAFKA >> PINOT >> PRESTO
