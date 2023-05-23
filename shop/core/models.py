@@ -33,4 +33,4 @@ class Transaction(DatetimeTracking):
         to="core.Product", related_name="transactions", on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.customer.full_name}  {self.product.name} at {self.created_at}"
+        return f"{self.product.name} at {self.created_at}"
