@@ -81,15 +81,15 @@ services:
       CONNECT_STATUS_STORAGE_TOPIC: docker-connect-status
       CONNECT_STATUS_STORAGE_REPLICATION_FACTOR: 1
       CONNECT_KEY_CONVERTER: org.apache.kafka.connect.storage.StringConverter
-      CONNECT_VALUE_CONVERTER: org.apache.kafka.connect.json.JsonConverter
-#      CONNECT_VALUE_CONVERTER: io.confluent.connect.avro.AvroConverter
+#      CONNECT_VALUE_CONVERTER: org.apache.kafka.connect.json.JsonConverter
+      CONNECT_VALUE_CONVERTER: io.confluent.connect.avro.AvroConverter
       CONNECT_VALUE_CONVERTER_SCHEMA_REGISTRY_URL: http://schema-registry:8081
       CONNECT_PLUGIN_PATH: "/usr/share/java,/usr/share/confluent-hub-components,/plugins"
       CONNECT_LOG4J_LOGGERS: org.apache.zookeeper=ERROR,org.I0Itec.zkclient=ERROR,org.reflections=ERROR
     volumes:
-      - $PWD/kafka/logs/connect/plugins:/plugins
-      - $PWD/kafka/logs/connect/secrets:/etc/kafka-connect/secrets
-      - $PWD/kafka/logs/kafka/data:/var/lib/kafka/data
+      - $PWD/kafka/volumes/connect/plugins:/plugins
+      - $PWD/kafka/volumes/connect/secrets:/etc/kafka-connect/secrets
+      - $PWD/kafka/volumes/kafka/data:/var/lib/kafka/data
       - $PWD/kafka/volumes/kafka/secrets:/etc/kafka/secrets
     networks:
       - shop-network

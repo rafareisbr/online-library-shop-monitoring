@@ -52,6 +52,7 @@ the data produced by the backend. Then the data is collected by pinot and enrich
 
 ## Overview
 APP >> KAFKA >> PINOT >> PRESTO
+```docker compose -f docker-compose-application.yaml -f docker-compose-kafka.yaml -f docker-compose-pinot.yaml up```
 
 ### Connect
 kafka-topics --bootstrap-server kafka:29092 --list

@@ -1,0 +1,17 @@
+{
+  "schemaName": "transactions",
+  "dimensionFieldSpecs": [
+    {"name": "id", "dataType": "INT"},
+    {"name": "user_id", "dataType": "INT"},
+    {"name": "product_id", "dataType": "INT"}
+  ],
+  "metricFieldSpecs": [],
+  "dateTimeFieldSpecs": [
+    {
+      "name": "ts",
+      "dataType": "TIMESTAMP",
+      "format": "1:MILLISECONDS:EPOCH",
+      "granularity": "1:MILLISECONDS"
+    }
+  ]
+}
